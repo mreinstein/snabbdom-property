@@ -135,7 +135,40 @@ import property from './property.js'
 // contains all data needed to render a property set
 const model = {
     container: document.createElement('div'),
-    drawer: property.init()
+    property: property.init({
+      properties: [
+        {
+            label: 'name',
+            type: 'string',
+            value: 'root'
+        },
+        {
+            label: 'display',
+            type: 'string',
+            value: 'grid'
+        },
+        {
+            label: 'grid-template-columns',
+            type: 'string',
+            value: 'repeat(2, 1fr)'
+        },
+        {
+            label: 'grid-template-rows',
+            type: 'string',
+            value: 'repeat(3, 1fr)'
+        },
+        {
+            label: 'grid-gap',
+            type: 'string',
+            value: '8px'
+        },
+        {
+            label: 'height',
+            type: 'string',
+            value: '100%'
+        }
+      ]
+    })
 }
 
 document.body.appendChild(model.container)
