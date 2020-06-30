@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+    <title>Property Component Prototype</title>
+    <meta name=theme-color content=#303F9F><meta name=viewport content="width=device-width,minimum-scale=1">
+    <style>
+        body {
+          font-family: monospace;
+          background-color: whitesmoke;
+          padding: 60px;
+        }
+
+        .property-set {
+          background-color: #1a1a1a;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .property-set-header {
+          padding: 4px;
+          /*width: 100%; */
+          background-color: black;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          user-select: none;
+          cursor: pointer;
+        }
+
+        .property-set-contents {
+          background-color: #1a1a1a;
+          padding: 4px;
+          width: 300px;
+        }
+
+        .expando {
+          font-size: 8px;
+        }
+
+        .property-label {
+          width: 70%;
+          overflow: hidden;
+        }
+
+        .property-label > input[type=text] {
+          outline: none;
+          border: 0;
+          padding: 3px;
+          width: 100%;
+          background-color: transparent;
+          color: white;
+        }
+
+
+        .property-field {
+          display: flex;
+          align-items: center;
+          font-size: 11px;
+          border-bottom: 1px solid #2c2c2c;
+          padding: 4px 0px;
+        }
+
+        .c {
+          width: 60%;
+          padding: 0px 4px;
+        }
+
+        textarea, .c > input[type=text] {
+          color: #1ed36f;
+          background-color: #303030;
+          outline: none;
+          border: 0;
+          padding: 3px;
+          width: 100%;
+        }
+
+        .c > input.sliderval[type=text] {
+          color: #2FA1D6;
+        }
+
+        .editor-button {
+          color: whitesmoke;
+          background: black;
+          border: none;
+          text-transform: uppercase;
+          margin: 4px;
+          font-size: 10px;
+          padding: 6px;
+          cursor: pointer;
+          outline: none;
+          border-left: 3px solid #505050;
+          transition-duration: 0.24s;
+        }
+
+        .editor-button:hover {
+          filter: brightness(150%);
+        }
+
+        .element-selected {
+          border: 1px dashed #333;
+        }
+
+        .button-selected {
+          border-left: 3px solid #1ed36f;
+        }
+
+        .c > .slider {
+          background: #303030;
+          cursor: ew-resize;
+          height: 16px;
+          width: 70%;
+        }
+
+        .c > .slider > .slider-fg {
+          background: #2FA1D6;
+          height: 16px;
+        }
+
+        textarea:hover, .c > input:hover {
+          background: #3c3c3c;
+        }
+
+        textarea:focus, .c > input:focus {
+          background: #494949;
+          color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+<script type="module">
+
+import html     from 'https://cdn.jsdelivr.net/npm/snabby@1/snabby.js'
+import property from './property.js'
+
+
+// contains all data needed to render a property set
+const model = {
+    container: document.createElement('div'),
+    drawer: property.init()
+}
+
+document.body.appendChild(model.container)
+
+
+function update () {
+    const newVnode = html`${property.view(model, update)}`
+    model.container = html.update(model.container, newVnode)
+}
+
+update()
+
+</script>
+
+</body>
+</html>
