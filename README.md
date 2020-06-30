@@ -7,7 +7,7 @@ snabbdom based property panel
 ## usage
 
 ```javascript
-TODO
+// TODO
 ```
 
 ## TODO

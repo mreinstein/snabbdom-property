@@ -2,7 +2,40 @@ import html from 'https://cdn.jsdelivr.net/npm/snabby@1/snabby.js'
 
 
 function init (options={}) {
-    const model = { }
+    const model = {
+        properties: [
+            {
+                name: 'name',
+                type: 'string',
+                value: 'root'
+            },
+            {
+                name: 'display',
+                type: 'string',
+                value: 'grid'
+            },
+            {
+                name: 'grid-template-columns',
+                type: 'string',
+                value: 'repeat(2, 1fr)'
+            },
+            {
+                name: 'grid-template-rows',
+                type: 'string',
+                value: 'repeat(3, 1fr)'
+            },
+            {
+                name: 'grid-gap',
+                type: 'string',
+                value: '8px'
+            },
+            {
+                name: 'height',
+                type: 'string',
+                value: '100%'
+            }               
+        ]
+    }
     return model
 }
 
