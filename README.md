@@ -12,5 +12,4 @@ snabbdom based property panel
 
 ## TODO
 
-* wire up the dynamic behavior of the widget
 * move the css properties from example.html into the code
