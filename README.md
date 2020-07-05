@@ -2,7 +2,7 @@
 
 snabbdom based property panel.
 
-![alt text](scr1.png "property panel")
+![alt text](example.png "property panel")
 
 Primarily this is useful for building editors, particularly ones that edit css property strings. 
 
