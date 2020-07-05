@@ -56,7 +56,6 @@ update()
 
 ## TODO
 
-* add animated gif of the widget in action
 * move the css properties from example.html into the code
 * enable setting other keyboard shortcuts for properties (right now hardcoded to `;`, `Enter`, `:`)
 * actual css property validation
