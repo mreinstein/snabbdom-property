@@ -10,7 +10,7 @@ Primarily this is useful for building editors, particularly ones that edit css p
 ## usage
 
 ```javascript
-import html     from 'https://cdn.jsdelivr.net/npm/snabby@1/snabby.js'
+import html     from 'https://cdn.jsdelivr.net/npm/snabby@2/snabby.js'
 import property from 'https://cdn.jsdelivr.net/gh/mreinstein/snabbdom-property/property.js'
 
 
